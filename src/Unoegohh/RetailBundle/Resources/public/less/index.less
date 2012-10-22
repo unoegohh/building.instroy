@@ -1,0 +1,152 @@
+#header {
+//  background: black;
+  margin: 0 auto;
+  width: 950px;
+}
+#logo {
+  float: left;
+  padding: 0 0 0 20px;
+  background: url(/images/background/logo.png) no-repeat left center;
+  height: 70px;
+  margin:  21px 0 0 20px;
+  h1{
+    color: #555753;
+    margin: 6px 0 0 40px;
+    text-shadow: 1px 1px #888a85;
+    font-family: Helvetica;
+    font-size: 50px;
+  }
+}
+#phones {
+  margin: 15px 20px 0 0 ;
+  float: right;
+  text-align: right;
+  span{
+    margin: 3px 0 0 0;
+    display: inline-block;
+    float: right;
+    clear: both;
+    &#phone_num{
+      color: #4F4F4F;
+      font-size: 22px;
+      i{
+        font-style: normal;
+        font-size: 12px;
+      }
+    }
+  }
+  a{
+    display: inline-block;
+    float: right;
+    clear: both;
+    margin: 3px 0 0 0 ;
+  }
+
+}
+
+#menu{
+  height: 40px;
+  background: green;
+  position: relative;
+  z-index: 5;
+  margin: 20px 0 0 0;
+  border-radius: 5px;
+  padding: 0 20px;
+  list-style-type: none;
+  box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.5);
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #e2e5de 48%, #ffffff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(48%,#e2e5de), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#e2e5de 48%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,#e2e5de 48%,#ffffff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,#e2e5de 48%,#ffffff 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ffffff 0%,#e2e5de 48%,#ffffff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+  li{
+    float: left;
+    a{
+      line-height: 30px;
+      height: 30px;
+      margin: 5px 0;
+      display: block;
+      padding: 0 15px;
+      text-decoration: none;
+      font-size: 15px;
+      border-right: 1px solid #babdb6;
+      border-left: 1px solid #fff;
+      &:hover{
+        height: 40px;
+        border-color: transparent;
+        margin:0;
+        line-height: 40px;
+        color: #F1F0F0;
+        background: #d0e4f7; /* Old browsers */
+        background: -moz-linear-gradient(top,  #d0e4f7 0%, #73b1e7 24%, #0a77d5 50%, #539fe1 79%, #87bcea 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d0e4f7), color-stop(24%,#73b1e7), color-stop(50%,#0a77d5), color-stop(79%,#539fe1), color-stop(100%,#87bcea)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#87bcea',GradientType=0 ); /* IE6-9 */
+      }
+    }
+    &:first-child a {
+      border-left: 1px solid transparent;
+    }
+    &:last-child a {
+      border-right: 1px solid transparent;
+    }
+
+  }
+}
+
+#banner {
+  background: #0458A8;
+  position: relative;
+  top: -5px;
+  #banner_wrapper{
+    margin:0 auto;
+    height: 200px;
+    background: url('/images/background/main.jpeg') no-repeat center top;
+  }
+}
+#content{
+  width: 910px;
+  font-size: 12px;
+  position: relative;
+  z-index: 10;
+  top: -10px;
+  border-radius: 5px;
+  border: 1px solid #babdb6;
+  margin: 0 auto ;
+  box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.5);
+  background: white;
+  padding: 20px;
+}
+#footer {
+  background: #414141;
+  position: relative;
+  top: -5px;
+  margin: -15px 0 0 0;
+  height: 150px;
+  width: 100%;
+  #footer_wrap{
+    width: 910px;
+    padding: 20px;
+    margin: 0 auto;
+    color: #B9B9B9;
+    div {
+      float: left;
+      margin: 0 50px 0 0 ;
+    }
+  }
+  #footer_links{
+    float: right;
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style-type: none;
+    li a {
+      color: #B9B9B9 ;
+    }
+  }
+}

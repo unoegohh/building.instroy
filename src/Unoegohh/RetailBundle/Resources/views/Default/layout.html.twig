@@ -1,0 +1,51 @@
+{% extends "UnoegohhRetailBundle:Default:base.html.twig" %}
+
+
+{% block body  %}
+    <div id="header">
+        <div id="logo">
+            <h1>Инстрой</h1>
+        </div>
+        <div id="phones">
+            <span id="phone_num" ><i>(495)</i> 225-25-67</span>
+            <a href="#">Онлайн-консультант</a>
+            <a href="/feedback">Обратная связь</a>
+            <span>Пн-пт: 9:00-17:30</span>
+        </div>
+        <div class="clear"></div>
+        {% render "UnoegohhRetailBundle:Menu:topMenu" %}
+
+        <div class="clear"></div>
+    </div>
+    <div id="banner">
+        <div id="banner_wrapper">
+
+        </div>
+    </div>
+    <div id="content">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+    <div id="footer">
+        <div id="footer_wrap">
+            <div id="copyright">
+                <p>
+                    Copyright © 2011—2012 <br>
+                    Инстрой
+                </p>
+            </div>
+            <div id="adress">
+                <p>
+                    Проспект Мира, дом 101, офис 306<br>
+                    Москва, 129085
+                </p>
+            </div>
+
+
+            {% render "UnoegohhRetailBundle:Menu:footerMenu" %}
+        </div>
+    </div>
+
+
+{% endblock %}

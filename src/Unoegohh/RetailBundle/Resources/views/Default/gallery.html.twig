@@ -1,0 +1,11 @@
+{% extends "UnoegohhRetailBundle:Default:layout.html.twig" %}
+
+{% block content %}
+    <h1>Галерея</h1>
+    {% for image in gallery %}
+        <a class="gallery_item" href="{{ image.url }}" rel="gallery">
+            <img src="{{ image.url }}" alt="{{ image.title }}">
+        </a>
+    {% endfor %}
+    <div class="clear"></div>
+{% endblock %}

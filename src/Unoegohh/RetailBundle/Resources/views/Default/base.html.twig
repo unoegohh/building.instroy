@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Сайт</title>
+    <meta name="keywords" content="{% block keywords %}{% endblock %}">
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <link rel="stylesheet" href="/css/lightbox.css">
+    {% stylesheets '@UnoegohhRetailBundle/Resources/public/less/*' %}
+    <link rel="stylesheet/less" type="text/css" href="{{ asset_url }}">
+    {% endstylesheets %}
+    {% javascripts '@UnoegohhRetailBundle/Resources/public/js/*' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    
+    {% block js %}
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

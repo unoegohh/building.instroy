@@ -1,0 +1,6 @@
+<ul id="menu">
+    <li><a href="/">Главная</a></li>
+    {% for item in menu %}
+        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+</ul>

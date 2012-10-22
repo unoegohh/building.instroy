@@ -1,0 +1,16 @@
+services:
+   unoegohh.admin.admin.banner:
+      class: Unoegohh\AdminBundle\Admin\BannerAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: 'Основное', label: 'Баннеры' }
+      arguments: [null, Unoegohh\AdminBundle\Entity\Banner, UnoegohhAdminBundle:Banner]
+   unoegohh.admin.admin.page:
+      class: Unoegohh\AdminBundle\Admin\PageAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: 'Основное', label: 'Страницы' }
+      arguments: [null, Unoegohh\AdminBundle\Entity\Page, UnoegohhAdminBundle:Page]
+   unoegohh.admin.admin.photo:
+      class: Unoegohh\AdminBundle\Admin\PhotoAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: 'Галлерея', label: 'Фотографии' }
+      arguments: [null, Unoegohh\AdminBundle\Entity\Photo, UnoegohhAdminBundle:Photo]
