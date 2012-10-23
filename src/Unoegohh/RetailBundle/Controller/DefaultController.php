@@ -3,6 +3,8 @@
 namespace Unoegohh\RetailBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Unoegohh\RetailBundle\Entity\Feedback;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
@@ -14,9 +16,41 @@ class DefaultController extends Controller
             'page' => $page,
         ));
     }
-    public function feedbackAction()
+    public function feedbackAction(Request $request)
     {
-        return $this->render('UnoegohhRetailBundle:Default:feedback.html.twig');
+        // just setup a fresh $task object (remove the dummy data)
+        $feedback = new Feedback();
+
+        $form = $this->createFormBuilder($feedback)
+            ->add('theme', 'text', array('label' => 'Тема'))
+            ->add('context', 'textarea', array('label' => 'Сообщение'))
+            ->add('name', 'text', array('label' => 'Ваше ФИО'))
+            ->add('contacts', 'text', array('label' => 'Как с вами связаться'))
+            ->getForm();
+
+        if ($request->getMethod() == 'POST') {
+            $form->bind($request);
+
+            if ($form->isValid()) {
+                if ($form->isValid()) {
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($feedback);
+                    $em->flush();
+
+                    $message = $this->get('mailer')->createMessage()
+                        ->setSubject($feedback->getTheme())
+                        ->setFrom(array('unoegohh@gmail.com' => 'Unoegohh'))
+                        ->setBody($this->renderView('UnoegohhRetailBundle:Default:mail.html.twig', array('feedback' => $feedback)), 'text/html');
+
+                    $this->get('mailer')->send($message);
+
+                    return $this->redirect($this->generateUrl('feedback_ok'));
+                }
+            }
+        }
+        return $this->render('UnoegohhRetailBundle:Default:feedback.html.twig' , array(
+            'form' => $form->createView(),
+        ));
     }
     public function galleryAction()
     {

@@ -2,5 +2,9 @@
 
 {% block content %}
     <h1>Обратная связь</h1>
-    <p>салют</p>
+    <form action="{{ path('unoegohh_retail_feedback') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+
+        <input type="submit" value="Отправить" class="submit"/>
+    </form>
 {% endblock %}
