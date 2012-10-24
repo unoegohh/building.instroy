@@ -39,8 +39,9 @@ class DefaultController extends Controller
 
                     $message = $this->get('mailer')->createMessage()
                         ->setSubject($feedback->getTheme())
-                        ->setFrom(array('unoegohh@gmail.com' => 'Unoegohh'))
-                        ->setBody($this->renderView('UnoegohhRetailBundle:Default:mail.html.twig', array('feedback' => $feedback)), 'text/html');
+                        ->setFrom(array($this->container->getParameter('mail_from') => $this->container->getParameter('mail_name')))
+                        ->setBody($this->renderView('UnoegohhRetailBundle:Default:mail.html.twig', array('feedback' => $feedback)), 'text/html')
+                        ->addTo($this->container->getParameter('mail_to'));
 
                     $this->get('mailer')->send($message);
 

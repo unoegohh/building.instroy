@@ -8,3 +8,7 @@ parameters:
     database_user: root
     database_password: root
     database_path: ~
+
+    mail_to: hello
+    mail_from: hello
+    mail_name: hello
