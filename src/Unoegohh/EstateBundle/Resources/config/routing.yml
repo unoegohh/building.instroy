@@ -1,0 +1,7 @@
+unoegohh_estate_homepage:
+    pattern:  /
+    defaults: { _controller: UnoegohhEstateBundle:Default:index }
+
+unoegohh_estate_show:
+    pattern:  /{id}
+    defaults: { _controller: UnoegohhEstateBundle:Default:show }

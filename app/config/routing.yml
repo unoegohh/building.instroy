@@ -1,10 +1,11 @@
-unoegohh_user:
-    resource: "@UnoegohhUserBundle/Resources/config/routing.yml"
-    prefix:   /
 
 admin:
     resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
     prefix: /admin
+
+unoegohh_estate:
+    resource: "@UnoegohhEstateBundle/Resources/config/routing.yml"
+    prefix:   /estate
 
 _sonata_admin:
     resource: .

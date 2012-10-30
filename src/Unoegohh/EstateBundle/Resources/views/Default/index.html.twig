@@ -1,0 +1,53 @@
+{% extends "UnoegohhRetailBundle:Default:layout.html.twig" %}
+
+{% block js %}
+    <script type="text/javascript">
+        $(function(){
+            $('.cat_content').scrollable().navigator('.navi');
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+    <h1>Недвижимость</h1>
+    {% for category,value in categories %}
+        <div class="category">
+            <div class="cat_header">
+                <h2>{{ category }}</h2>
+                {% if value|length > 4 %}
+                <div class="navigation">
+                    <span class="prev"></span>
+                    <div class="navi">
+                    </div>
+                    <span class="next"></span>
+                </div>
+                    {% endif %}
+
+                <div class="clear"></div>
+            </div>
+            <div class="cat_content">
+                <div class="items">
+                    <div class="cat_wrap">
+                    {% for item in value %}
+                        <div class="item">
+                            <h4>{{ item.placement }}</h4>
+                            <a class="img_wrapper" href="{{ path('unoegohh_estate_show' , {'id' : item.id}) }}">
+                                <img src="{{ item.photo }}" alt="">
+                            </a>
+
+                            <p>{{ item.smallDesc }}</p>
+                            <a href="{{ path('unoegohh_estate_show' , {'id' : item.id}) }}" class="price">{{ item.price }} руб</a>
+                        </div>
+                        {% if loop.index is divisibleby(4) and loop.index != value|length %}
+                            <div class="clear"></div>
+                            </div>
+                            <div class="cat_wrap">
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

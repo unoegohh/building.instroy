@@ -3,9 +3,9 @@
 
 {% block body  %}
     <div id="header">
-        <div id="logo">
-            <h1>Инстрой</h1>
-        </div>
+        <a id="logo" {% if estate_logo is defined %}class="estate"{% endif %} href="/">
+
+        </a>
         <div id="phones">
             <span id="phone_num" ><i>(495)</i> 225-25-67</span>
             <a href="#">Онлайн-консультант</a>

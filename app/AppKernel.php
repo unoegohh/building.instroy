@@ -30,6 +30,7 @@ class AppKernel extends Kernel
             new Unoegohh\UserBundle\UnoegohhUserBundle(),
             new Unoegohh\AdminBundle\UnoegohhAdminBundle(),
             new Unoegohh\RetailBundle\UnoegohhRetailBundle(),
+            new Unoegohh\EstateBundle\UnoegohhEstateBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

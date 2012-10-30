@@ -1,0 +1,126 @@
+{% extends "UnoegohhRetailBundle:Default:layout.html.twig" %}
+
+{% block content %}
+    <h1>{{ estate.title }}</h1>
+    <div id="estate">
+        <div class="img_wrapper">
+            <a href="{{ estate.photo1 }}" rel="lightbox[images]">
+                <img src="{{ estate.photo1 }}" alt="">
+            </a>
+            <div id="other_photos">
+                {% if estate.photo2 %}
+                    <a href="{{ estate.photo1 }}" rel="lightbox[images]">
+                        <img src="{{ estate.photo1 }}" alt="">
+                    </a>
+                {% endif %}
+                {% if estate.photo3 %}
+                    <a href="{{ estate.photo1 }}" rel="lightbox[images]">
+                        <img src="{{ estate.photo1 }}" alt="">
+                    </a>
+                {% endif %}
+                {% if estate.photo4 %}
+                    <a href="{{ estate.photo1 }}" rel="lightbox[images]">
+                        <img src="{{ estate.photo1 }}" alt="">
+                    </a>
+                {% endif %}
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="stats">
+            <div class="distance">
+                {% if estate.plane %}
+                    <span>рядом</span>
+                {% else %}
+                    <span>-</span>
+                {% endif %}
+                {% if estate.bus %}
+                    <span>рядом</span>
+                {% else %}
+                    <span>-</span>
+                {% endif %}
+                {% if estate.train %}
+                    <span>рядом</span>
+                {% else %}
+                    <span>-</span>
+                {% endif %}
+                {% if estate.shop %}
+                    <span>рядом</span>
+                {% else %}
+                    <span>-</span>
+                {% endif %}
+                {% if estate.road %}
+                    <span>рядом</span>
+                {% else %}
+                    <span>-</span>
+                {% endif %}
+                {% if estate.ski %}
+                    <span>рядом</span>
+                {% else %}
+                    <span>-</span>
+                {% endif %}
+                {% if estate.beach %}
+                    <span>рядом</span>
+                {% else %}
+                    <span>-</span>
+                {% endif %}
+            </div>
+            <table>
+                {% if estate.id %}
+                    <tr>
+                        <td>Реф.No:</td>
+                        <td>{{ estate.id }}</td>
+                    </tr>
+                {% endif %}
+                {% if estate.square %}
+                    <tr>
+                        <td>Жилая площадь:</td>
+                        <td>{{ estate.square }}</td>
+                    </tr>
+                {% endif %}
+                {% if estate.floor %}
+                    <tr>
+                        <td>Етаж:</td>
+                        <td>{{ estate.floor }}</td>
+                    </tr>
+                {% endif %}
+                {% if estate.beds %}
+                    <tr>
+                        <td>Спальни:</td>
+                        <td>{{ estate.beds }}</td>
+                    </tr>
+                {% endif %}
+                    {% if estate.furniture %}
+                        <tr>
+                            <td>Меблировка:</td>
+                            <td>{{ estate.furniture }}</td>
+                        </tr>
+                    {% endif %}
+                {% if estate.type %}
+                    <tr>
+                        <td>Предложение по типу:</td>
+                        <td>{{ estate.type }}</td>
+                    </tr>
+                {% endif %}
+                {% if estate.garaj %}
+                    <tr>
+                        <td>Гараж:</td>
+                        <td>{{ estate.garaj }}</td>
+                    </tr>
+                {% endif %}
+            </table>
+            <p class="price">{{ estate.price }} руб</p>
+        </div>
+        <div class="clear"></div>
+        <p>{{ estate.descr|raw }}</p>
+        {% if estate.map %}
+            <span style="display: inline-block; float:left;margin: 0  10px 0 0">
+            {#<iframe width="450" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ru/maps?f=q&amp;source=s_q&amp;hl=ru&amp;geocode=&amp;q=%D0%A1%D0%BE%D0%B1%D0%BE%D1%80+%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D1%8F+%D0%91%D0%BB%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%2F+St.+Basil's+Cathedral,+%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F+%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C&amp;aq=0&amp;oq=%D1%81%D0%B0%D0%B1%D0%BE%D1%80&amp;sll=55.354135,40.297852&amp;sspn=16.569482,46.538086&amp;ie=UTF8&amp;hq=%D0%A1%D0%BE%D0%B1%D0%BE%D1%80+%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D1%8F+%D0%91%D0%BB%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%2F+St.+Basil's+Cathedral,+%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F+%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C&amp;t=m&amp;ll=55.752501,37.623153&amp;spn=0.007245,0.019269&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>#}
+            {{ estate.map|raw }}
+            </span>
+        {% endif %}
+        {% if estate.video %}
+            <iframe width="450" height="300" src="{{ estate.video }}" frameborder="0" allowfullscreen></iframe>
+        {% endif %}
+        <div class="clear"></div>
+    </div>
+{% endblock %}

@@ -3,6 +3,6 @@
     <li><a href="/">Главная</a></li>
     <li><a href="/gallery">Портфолио</a></li>
     {% for item in footer_menu %}
-        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+        <li><a href="/{{ item.url }}">{{ item.title }}</a></li>
     {% endfor %}
 </ul>

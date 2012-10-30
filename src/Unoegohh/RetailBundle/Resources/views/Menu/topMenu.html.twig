@@ -2,6 +2,7 @@
     <li><a href="/">Главная</a></li>
     <li><a href="/gallery">Портфолио</a></li>
     {% for item in menu %}
-        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+        <li><a href="/{{ item.url }}">{{ item.title }}</a></li>
     {% endfor %}
+    <li><a href="/estate/">Недвижимость</a></li>
 </ul>

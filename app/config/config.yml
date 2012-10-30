@@ -33,6 +33,8 @@ sonata_block:
         sonata.admin.block.admin_list:
             contexts: [admin]
 
+twig:
+    debug: true
 
 sonata_admin:
     templates:
