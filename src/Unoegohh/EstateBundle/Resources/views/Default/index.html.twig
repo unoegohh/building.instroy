@@ -32,7 +32,11 @@
                         <div class="item">
                             <h4>{{ item.placement }}</h4>
                             <a class="img_wrapper" href="{{ path('unoegohh_estate_show' , {'id' : item.id}) }}">
-                                <img src="{{ item.photo }}" alt="">
+                                {% for image in item.photos %}
+                                    {% if loop.index == 1 %}
+                                        <img src="{{ image.url }}" alt="">
+                                    {% endif %}
+                                {% endfor %}
                             </a>
 
                             <p>{{ item.smallDesc }}</p>

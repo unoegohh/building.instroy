@@ -4,25 +4,22 @@
     <h1>{{ estate.title }}</h1>
     <div id="estate">
         <div class="img_wrapper">
-            <a href="{{ estate.photo1 }}" rel="lightbox[images]">
-                <img src="{{ estate.photo1 }}" alt="">
-            </a>
+
+            {% for image in estate.photos %}
+                {% if loop.index == 1 %}
+                    <a href="{{ image.url }}" rel="lightbox[images]">
+                        <img src="{{ image.url }}" alt="">
+                    </a>
+                {% endif %}
+            {% endfor %}
             <div id="other_photos">
-                {% if estate.photo2 %}
-                    <a href="{{ estate.photo1 }}" rel="lightbox[images]">
-                        <img src="{{ estate.photo1 }}" alt="">
-                    </a>
-                {% endif %}
-                {% if estate.photo3 %}
-                    <a href="{{ estate.photo1 }}" rel="lightbox[images]">
-                        <img src="{{ estate.photo1 }}" alt="">
-                    </a>
-                {% endif %}
-                {% if estate.photo4 %}
-                    <a href="{{ estate.photo1 }}" rel="lightbox[images]">
-                        <img src="{{ estate.photo1 }}" alt="">
-                    </a>
-                {% endif %}
+                {% for image in estate.photos %}
+                    {% if loop.index == 1 %}
+                        <a href="{{ image.url }}" rel="lightbox[images]">
+                            <img src="{{ image.url }}" alt="">
+                        </a>
+                    {% endif %}
+                {% endfor %}
                 <div class="clear"></div>
             </div>
         </div>
