@@ -94,7 +94,7 @@ class Estate
     protected $garaj;
 
     /**
-     * @ORM\OneToMany(targetEntity="EstatePhoto",mappedBy="estate",cascade={"persist, remove"})
+     * @ORM\OneToMany(targetEntity="EstatePhoto",mappedBy="estate",cascade={"persist", "remove"})
      */
     protected $photos;
 
