@@ -29,3 +29,8 @@ services:
       tags:
         - { name: sonata.admin, manager_type: orm, group: 'Недвижимость', label: 'Объекты' }
       arguments: [null, Unoegohh\AdminBundle\Entity\Estate, UnoegohhAdminBundle:Estate]
+   unoegohh.admin.admin.estatePhoto:
+      class: Unoegohh\AdminBundle\Admin\EstatePhotoAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: 'Недвижимость', label: 'Фото' }
+      arguments: [null, Unoegohh\AdminBundle\Entity\EstatePhoto, UnoegohhAdminBundle:EstatePhoto]

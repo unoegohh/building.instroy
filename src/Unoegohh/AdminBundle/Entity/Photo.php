@@ -37,12 +37,6 @@ class Photo
     protected $enabled;
 
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Estate")
-     * @ORM\JoinColumn(name="estate_id",referencedColumnName="id")
-     */
-    protected $estate;
-
 
     public function __toString()
     {
@@ -156,14 +150,5 @@ class Photo
         return $this->enabled;
     }
 
-    public function setEstate($estate)
-    {
-        $this->estate = $estate;
-    }
-
-    public function getEstate()
-    {
-        return $this->estate;
-    }
 
 }

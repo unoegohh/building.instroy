@@ -94,7 +94,7 @@ class Estate
     protected $garaj;
 
     /**
-     * @ORM\OneToMany(targetEntity="Photo",mappedBy="estate",cascade="persist")
+     * @ORM\OneToMany(targetEntity="EstatePhoto",mappedBy="estate",cascade={"persist"})
      */
     protected $photos;
 
@@ -373,8 +373,9 @@ class Estate
         return $this->road;
     }
 
-    public function addPhotos($photos)
+    public function addPhotos(EstatePhoto $photos)
     {
+        $photos->setEstate($this->getId());
         $this->photos[] = $photos;
     }
 

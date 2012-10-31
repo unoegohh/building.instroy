@@ -11,7 +11,7 @@ use Knp\Menu\ItemInterface as MenuItemInterface;
 
 use Unoegohh\AdminBundle\Entity\Banner;
 
-class PhotoAdmin extends Admin
+class EstatePhotoAdmin extends Admin
 {
     /**
      * @param \Sonata\AdminBundle\Form\FormMapper $formMapper
@@ -36,6 +36,7 @@ class PhotoAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+            ->addIdentifier('url', null, array('label' => 'Ссылка'))
             ->add('position', null, array('label' => 'Позиция'))
             ->add('_action', 'actions', array(
             'actions' => array(
@@ -56,7 +57,6 @@ class PhotoAdmin extends Admin
     {
         $datagridMapper
             ->add('url')
-            ->add('position')
         ;
     }
 }
