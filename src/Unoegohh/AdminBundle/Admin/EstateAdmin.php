@@ -77,7 +77,7 @@ class EstateAdmin extends Admin
             ->with('Медиа',array('collapsed' => true))
                 ->add('map',null,array('label' => 'Карта', 'required' => false))
                 ->add('video',null,array('label' => 'Видео', 'required' => false))
-                ->add('photos','sonata_type_collection',array('label' => 'Фото', 'required' => false), array(
+                ->add('photos','sonata_type_collection',array('label' => 'Фото', 'required' => false, 'by_reference' => false), array(
                     'edit' => 'inline',
                     'inline' => 'table'
                 ))

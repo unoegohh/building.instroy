@@ -57,7 +57,8 @@ class DefaultController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
-        $gallery = $em->getRepository('UnoegohhAdminBundle:Photo')->findBy(array('enabled' => true));
+
+        $gallery = $em->getRepository('UnoegohhAdminBundle:Photo')->findBy(array('enabled' => true),array('position' => "ASC"));
 
         return $this->render('UnoegohhRetailBundle:Default:gallery.html.twig',array(
             'gallery'  => $gallery

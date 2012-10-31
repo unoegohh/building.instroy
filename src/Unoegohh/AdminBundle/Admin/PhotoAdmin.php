@@ -22,6 +22,8 @@ class PhotoAdmin extends Admin
     {
         $formMapper
             ->with('Основное')
+            ->add('enabled', null, array('required' => false, 'label' => 'Включен'))
+            ->add('title', null, array('label' => 'Название'))
             ->add('url', null, array('label' => 'Ссылка на картинку'))
             ->add('position', null, array('label' => 'Позиция'))
             ->end()
@@ -36,6 +38,8 @@ class PhotoAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+            ->addIdentifier('title', null, array('label' => 'Название'))
+            ->add('enabled', null, array('label' => 'Включен'))
             ->add('position', null, array('label' => 'Позиция'))
             ->add('_action', 'actions', array(
             'actions' => array(
@@ -55,6 +59,8 @@ class PhotoAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
+            ->add('title')
+            ->add('enabled')
             ->add('url')
             ->add('position')
         ;

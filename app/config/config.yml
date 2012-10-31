@@ -13,7 +13,6 @@ framework:
     session: ~
     translator: { fallback: ru }
 
-
 doctrine:
     dbal:
         driver: %database_driver%

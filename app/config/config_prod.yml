@@ -1,6 +1,9 @@
 imports:
     - { resource: config.yml }
 
+assetic:
+    use_controller: true
+
 monolog:
     handlers:
         main:

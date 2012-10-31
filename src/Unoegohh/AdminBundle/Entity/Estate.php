@@ -373,10 +373,15 @@ class Estate
         return $this->road;
     }
 
-    public function addPhotos(EstatePhoto $photos)
+    public function addPhoto($photos)
     {
-        $photos->setEstate($this->getId());
+        $photos->setEstate($this);
         $this->photos[] = $photos;
+    }
+
+    public function addPhotos($photos)
+    {
+        $this->addPhoto($photos);
     }
 
     public function removePhoto($photo)

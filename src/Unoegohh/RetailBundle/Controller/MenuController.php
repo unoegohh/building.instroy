@@ -15,7 +15,7 @@ class MenuController extends Controller
 
         if (!$success) {
             $em = $this->getDoctrine()->getManager();
-            $menu = $em->getRepository('UnoegohhAdminBundle:Page')->findBy(array('enabled' => true,'menu' => true));
+            $menu = $em->getRepository('UnoegohhAdminBundle:Page')->findBy(array('enabled' => true,'menu' => true),array('position' => "ASC"));
             apc_store($key, $menu);
         }
 
@@ -33,7 +33,7 @@ class MenuController extends Controller
 
         if (!$success) {
             $em = $this->getDoctrine()->getManager();
-            $footer_menu = $em->getRepository('UnoegohhAdminBundle:Page')->findBy(array('enabled' => true,'footer_menu' => true));
+            $footer_menu = $em->getRepository('UnoegohhAdminBundle:Page')->findBy(array('enabled' => true,'footer_menu' => true),array('position' => "ASC"));
             apc_store($key, $footer_menu);
         }
 
