@@ -54,7 +54,8 @@ class Estate
     protected $video;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\ManyToOne(targetEntity="EstateCity")
+     * @ORM\JoinColumn(name="placement_id",referencedColumnName="id")
      */
     protected $placement;
 

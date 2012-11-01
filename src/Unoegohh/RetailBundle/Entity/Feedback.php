@@ -2,18 +2,9 @@
 
 namespace Unoegohh\RetailBundle\Entity;
 
-use Symfony\Component\Validator\Mapping\ClassMetadata;
-use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\Type;
 
 class Feedback
 {
-
-    public static function loadValidatorMetadata(ClassMetadata $metadata)
-    {
-        $metadata->addPropertyConstraint('context', new NotBlank());
-        $metadata->addPropertyConstraint('contacts', new NotBlank());
-    }
 
     protected $theme;
 

@@ -32,10 +32,7 @@ class DefaultController extends Controller
             $form->bind($request);
 
             if ($form->isValid()) {
-                if ($form->isValid()) {
-                    $em = $this->getDoctrine()->getManager();
-                    $em->persist($feedback);
-                    $em->flush();
+                    $feedback = $form->getData();
 
                     $message = $this->get('mailer')->createMessage()
                         ->setSubject($feedback->getTheme())
@@ -43,15 +40,19 @@ class DefaultController extends Controller
                         ->setBody($this->renderView('UnoegohhRetailBundle:Default:mail.html.twig', array('feedback' => $feedback)), 'text/html')
                         ->addTo($this->container->getParameter('mail_to'));
 
-                    $this->get('mailer')->send($message);
+//                    $this->get('mailer')->send($message);
 
-                    return $this->redirect($this->generateUrl('feedback_ok'));
-                }
+                    return $this->redirect($this->generateUrl('unoegohh_retail_feedback_ok'));
+
             }
         }
         return $this->render('UnoegohhRetailBundle:Default:feedback.html.twig' , array(
             'form' => $form->createView(),
         ));
+    }
+    public function feedbackOkAction()
+    {
+        return $this->render('UnoegohhRetailBundle:Default:feedbackOk.html.twig');
     }
     public function galleryAction()
     {
@@ -69,6 +70,10 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $page = $em->getRepository('UnoegohhAdminBundle:Page')->findOneBy(array('url' => $url,'enabled' => true));
 
+        if(count($page) < 1){
+
+
+        }
         return $this->render('UnoegohhRetailBundle:Default:index.html.twig', array(
             'page' => $page
         ));

@@ -6,6 +6,10 @@ unoegohh_retail_feedback:
     pattern:  /feedback
     defaults: { _controller: UnoegohhRetailBundle:Default:feedback }
 
+unoegohh_retail_feedback_ok:
+    pattern:  /feedbackOk
+    defaults: { _controller: UnoegohhRetailBundle:Default:feedbackOk }
+
 unoegohh_retail_gallery:
     pattern:  /gallery
     defaults: { _controller: UnoegohhRetailBundle:Default:gallery }

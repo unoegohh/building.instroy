@@ -14,7 +14,7 @@
             {% endfor %}
             <div id="other_photos">
                 {% for image in estate.photos %}
-                    {% if loop.index == 1 %}
+                    {% if loop.index != 1 %}
                         <a href="{{ image.url }}" rel="lightbox[images]">
                             <img src="{{ image.url }}" alt="">
                         </a>
@@ -76,7 +76,7 @@
                 {% endif %}
                 {% if estate.floor %}
                     <tr>
-                        <td>Етаж:</td>
+                        <td>Этаж:</td>
                         <td>{{ estate.floor }}</td>
                     </tr>
                 {% endif %}

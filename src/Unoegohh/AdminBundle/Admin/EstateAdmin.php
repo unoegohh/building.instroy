@@ -46,27 +46,17 @@ class EstateAdmin extends Admin
                 ->add('position',null,array('label' => 'Порядок'))
             ->end()
             ->with('Параметры',array('collapsed' => true))
-                ->add('placement',
-                'entity',
-                array(
-                    'label' => 'Город',
-                    'empty_value' => null,
-                    'empty_data' => null,
-                    'class' => 'UnoegohhAdminBundle:EstateCity',
-                    'query_builder' => function(EntityRepository $cat) {
-                        return $cat->createQueryBuilder('c');
-                    }
-                ))
+                ->add('placement', 'sonata_type_model', array('label' => 'Город',))
 //                ->add('placement','sonata_type_model',array('label' => 'Жилая площадь'))
                 ->add('square',null,array('label' => 'Жилая площадь'))
-                ->add('floor',null,array('label' => 'Етаж'))
+                ->add('floor',null,array('label' => 'Этаж'))
                 ->add('beds',null,array('label' => 'Спальни'))
                 ->add('furniture',null,array('label' => 'Меблировка'))
                 ->add('type',null,array('label' => 'Предложение по типу'))
                 ->add('garaj',null,array('label' => 'Гараж'))
             ->end()
             ->with('Растояния',array('collapsed' => true))
-                ->add('plane',null,array('label' => 'до самлета', 'required' => false))
+                ->add('plane',null,array('label' => 'до самолета', 'required' => false))
                 ->add('bus',null,array('label' => 'до автобуса', 'required' => false))
                 ->add('train',null,array('label' => 'до поезда', 'required' => false))
                 ->add('road',null,array('label' => 'шоссе', 'required' => false))
