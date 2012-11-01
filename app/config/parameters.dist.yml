@@ -9,6 +9,6 @@ parameters:
     database_password: root
     database_path: ~
 
-    mail_to: hello@gmail.com
+    mail_to: unoegohh@gmail.com
     mail_from: hello@gmail.com
     mail_name: hello
