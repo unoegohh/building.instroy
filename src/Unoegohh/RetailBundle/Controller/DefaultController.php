@@ -40,7 +40,7 @@ class DefaultController extends Controller
                         ->setBody($this->renderView('UnoegohhRetailBundle:Default:mail.html.twig', array('feedback' => $feedback)), 'text/html')
                         ->addTo($this->container->getParameter('mail_to'));
 
-//                    $this->get('mailer')->send($message);
+                    $this->get('mailer')->send($message);
 
                     return $this->redirect($this->generateUrl('unoegohh_retail_feedback_ok'));
 
