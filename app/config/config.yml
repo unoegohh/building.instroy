@@ -65,3 +65,4 @@ swiftmailer:
     transport:  gmail
     username:   unoegohhtest
     password:   Unoegohh123
+    host: smtp.gmail.com
