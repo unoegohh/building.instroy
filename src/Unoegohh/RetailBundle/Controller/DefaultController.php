@@ -72,7 +72,7 @@ class DefaultController extends Controller
 
         if(count($page) < 1){
 
-
+            // ДАДА И ТУТ ЛЕНИВАЯ ТЫ ЖОПА
         }
         return $this->render('UnoegohhRetailBundle:Default:index.html.twig', array(
             'page' => $page
