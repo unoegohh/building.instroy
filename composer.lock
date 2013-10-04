@@ -788,44 +788,6 @@
             ]
         },
         {
-            "name": "rithis/composer-handler",
-            "version": "v2.1.1",
-            "target-dir": "Rithis/Composer",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/rithis/composer-handler.git",
-                "reference": "v2.1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/rithis/composer-handler/zipball/v2.1.1",
-                "reference": "v2.1.1",
-                "shasum": ""
-            },
-            "require": {
-                "sensio/distribution-bundle": "2.1.*@stable"
-            },
-            "time": "2012-09-19 03:05:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-0": {
-                    "Rithis\\Composer": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Vyacheslav Slinko",
-                    "email": "vyacheslav.slinko@rithis.com",
-                    "role": "Founder"
-                }
-            ],
-            "homepage": "https://github.com/rithis/composer-handler"
-        },
-        {
             "name": "sensio/distribution-bundle",
             "version": "2.1.x-dev",
             "target-dir": "Sensio/Bundle/DistributionBundle",
