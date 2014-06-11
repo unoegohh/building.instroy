@@ -1,0 +1,52 @@
+{% extends "UnoegohhRetailBundle:Default:base.html.twig" %}
+
+
+{% block body  %}
+    <div id="header">
+        <a id="logo" {% if estate_logo is defined %}class="estate"{% endif %} href="/">
+
+        </a>
+        <div id="phones">
+            <span id="phone_num" >
+                <i>(846)</i> 272-28-58<br>
+                <i>(846)</i> 275-00-29
+            </span>
+            <a href="skype:instroygr?call">Онлайн-консультант</a>
+            <a href="/feedback">Обратная связь</a>
+            <span>Пн-вс: 9:00-20:00</span>
+        </div>
+        <div class="clear"></div>
+        {% render "UnoegohhRetailBundle:Menu:topMenu" %}
+
+        <div class="clear"></div>
+    </div>
+    <div id="banner">
+        <div id="banner_wrapper">
+
+        </div>
+    </div>
+    <div id="content">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+    <div id="footer">
+        <div id="footer_wrap">
+            <div id="copyright">
+                <p>
+                    Copyright © 2011—2012 <br>
+                    Инстрой
+                </p>
+            </div>
+            <div id="adress">
+                <p>
+                    г.Самара ул. Галактионовская 130 2 этаж
+                </p>
+            </div>
+
+
+            {% render "UnoegohhRetailBundle:Menu:footerMenu" %}
+        </div>
+    </div>
+
+{% endblock %}
