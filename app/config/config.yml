@@ -46,7 +46,7 @@ fos_user:
     user_class: Unoegohh\UserBundle\Entity\User
 
 stfalcon_tinymce:
-    textarea_class: "tinymce"
+    #textarea_class: "tinymce"
     theme:
         advanced:
             width: '700px'
